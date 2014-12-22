@@ -1,0 +1,16 @@
+<div class="mask-article mask-details">
+      	
+  <span class="mask-nocomment" ng-show="reply.hasNoData && !reply.lists.length">暂无评论内容</span>
+  <!--暂无评论标签-->
+  
+  <article class="article" ng-repeat="item in reply.lists">
+    <div class="m-txt1 range-time">
+      <span class="time">{{item.publishTime | changeTime}}</span><span class="range">{{item.secretname}}</span>
+    </div>
+    <div class="edit-content">
+      <a href="#" class="m-txt2">{{item.content}}</a>
+    </div>
+  </article>
+  <div class='loading' ng-click="reply.nextPage();" ng-show="reply.loadMore">点击加载更多</div>
+  <div class='loading' ng-show="reply.loading"><i class="icons icons_3"></i>正在加载</div>
+</div>

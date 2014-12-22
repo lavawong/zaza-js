@@ -1,0 +1,36 @@
+<form name="maskForm" ng-controller="AddMaskCtrl as addMaskCtrl"  class="wrapper">
+<!--header-->
+<div class="navbar-absolute-top">
+  <header class="mask-header">
+    <a href="#" ng-click="senceCtrl.back();addCmtCtrl.reset();" class="return">
+      <span class="a"></span><span class="b"></span>
+    </a>
+    <a href="#" ng-click="maskForm.$valid && !addMaskCtrl.isSubmit && addMaskCtrl.addMask()" class="send">
+      <span class="a"></span><span class="b"></span>
+    </a>
+    <div class="head-name">
+      <span class="name m-txt2">写MASK</span>
+    </div>
+  </header>
+</div>
+<!--/header-->
+<!--footer-->
+<div class="navbar-absolute-bottom">
+  <span class="m-txt1">
+			我的积分{{senceCtrl.userData.user_info.score}}
+		</span>
+</div>
+<!--/footer-->
+<div class="mask-body">
+  	<div class="scrollable">
+        <div class="mask-content">
+        	<div class="mask-textarea">
+          	<textarea name="content" ng-model="addMaskCtrl.mask.content" auto-focus="senceCtrl.sence.currentPage" auto-focus-value="writePage" class="textarea" placeholder="请输入..." max-character-length=100 required></textarea>
+            <!--"textarea"高度js获取重新定义-->
+            <span class="tips" ng-hide="maskForm.content.$error.maxCharacterLength">可输入<font color="#c1c1c1">{{ addMaskCtrl.mask.content | limitCharacters:100 }}</font>字</span>
+            <span class="tips" ng-show="maskForm.content.$error.maxCharacterLength">已超出<font color="#FF0000">{{ addMaskCtrl.mask.content | outOfLimit:100}}</font>字</span>
+          </div>
+        </div>
+	</div>
+</div>
+</form>

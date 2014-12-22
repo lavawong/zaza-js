@@ -1,0 +1,58 @@
+			
+<!--header-->
+<div class="navbar-absolute-top">
+  <header class="mask-header">
+    <a href="#"  ng-click="senceCtrl.back()" class="return">
+      <span class="a"></span><span class="b"></span>
+    </a>
+    
+    <div class="head-name">
+      <span class="name m-txt2">更多</span>
+    </div>
+  </header>
+</div>
+<!--/header-->
+<!--footer-->
+<div class="navbar-absolute-bottom">
+  <span class="m-txt1">
+			我的积分{{senceCtrl.userData.user_info.score}}
+		</span>
+</div>
+<!--/footer-->
+<div class="mask-body">
+  <div class="scrollable">
+    <div class="mask-content">
+      <!--新加主体内容-->
+      <div class="mask-hot">
+        <ul class="hot-list">
+        	<li class="hot-tit m-txt1">我的秘密</li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt2" ng-click="senceCtrl.toggle('myList'); more.setType('secret');"><i class="icons icons_angle"></i><i class="icons icons_secret"></i>我最近的秘密</a>
+          </li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt2" ng-click="senceCtrl.toggle('myReply'); more.setType('reply');"><i class="icons icons_angle"></i><i class="icons icons_dis"></i>我最近的评论</a>
+          </li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt2" ng-click="senceCtrl.toggle('updateNick');"><i class="icons icons_angle"></i><i class="icons icons_name"></i>我的昵称</a>
+          </li>
+        </ul>
+        <!-- <ul class="hot-list">
+          <li class="hot-tit m-txt1">其它</li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt3"><i class="icons icons_angle"></i>清除痕迹</a>
+          </li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt3"><i class="icons icons_angle"></i>意见反馈</a>
+          </li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt3"><i class="icons icons_angle"></i>给我评分</a>
+          </li>
+          <li class="hot-txt">
+          	<a href="#" class="lk_a m-txt3"><i class="icons icons_angle"></i>检测更新</a>
+          </li>
+        </ul> -->
+      </div>
+      <!--/新加主体内容-->
+    </div>
+	</div>
+</div>

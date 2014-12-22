@@ -1,0 +1,42 @@
+{"code": "A00006", "message": "操作成功", "data": {
+    "place_info": [
+        {
+            "pid": "3",
+            "po_places": "北京林业大学",
+            "longitude": "0.0000000000",
+            "latitude": "0.0000000000",
+            "level": "3"
+        },
+        {
+            "pid": "1",
+            "po_places": "北京大学",
+            "longitude": "0.0000000000",
+            "latitude": "0.0000000000",
+            "level": "2"
+        },
+        {
+            "pid": "2",
+            "po_places": "清华大学",
+            "longitude": "0.0000000000",
+            "latitude": "0.0000000000",
+            "level": "1"
+        }
+    ],
+    "topic_info": [
+        {
+            "tid": "1",
+            "tname": "世界杯你请假了吗",
+            "level": "3"
+        },
+        {
+            "tid": "3",
+            "tname": "女孩因看世界杯跳楼",
+            "level": "2"
+        },
+        {
+            "tid": "2",
+            "tname": "毕业发碗",
+            "level": "1"
+        }
+    ]
+}}

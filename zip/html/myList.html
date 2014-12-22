@@ -1,0 +1,28 @@
+<!--header-->
+<div class="navbar-absolute-top">
+  <header class="mask-header">
+    <a href="#" class="return" ng-click="senceCtrl.back()">
+      <span class="a"></span><span class="b"></span>
+    </a>
+    
+    <div class="head-name">
+      <span class="name m-txt2">我最近的秘密</span>
+    </div>
+  </header>
+</div>
+<!--/header-->
+<!--footer-->
+<div class="navbar-absolute-bottom">
+  <span class="m-txt1">
+    我的积分{{senceCtrl.userData.user_info.score}}
+  </span>
+</div>
+<!--/footer-->
+<div class="mask-body">
+
+  <div class="scrollable">
+    <div class="mask-content">
+      <list-set></list-set>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+{
+    "code": "A00006",
+    "message": "success",
+    "data": {
+        "count": "3",
+        "page": 1,
+        "list": [
+            {
+                "id": "7",
+                "nickName": "0",
+                "content": "content",
+                "publishTime": 1402891279,
+                "longitude": "1000.9900000000",
+                "latitude": "10.0000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 15867
+            },
+            {
+                "id": "8",
+                "nickName": "0",
+                "content": "content",
+                "publishTime": 1402891295,
+                "longitude": "1000.9900000000",
+                "latitude": "10.0000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 15867
+            },
+            {
+                "id": "9",
+                "nickName": "0",
+                "content": "content",
+                "publishTime": 1402891304,
+                "longitude": "1000.9900000000",
+                "latitude": "10.0000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 15867
+            }
+        ]
+    }
+}

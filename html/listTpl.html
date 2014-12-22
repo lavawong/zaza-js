@@ -1,0 +1,20 @@
+<div class="mask-article" ng-init="showUpAndDown=true">
+  <span class="mask-nocomment" ng-show="list.hasNoData && !list.lists.length">暂无数据</span>
+  <pull-refresh pull-call="list"></pull-refresh>
+  <article class="article" ng-repeat="item in list.lists">
+    <div class="m-txt1 range-time" ng-click="list.setDetail({{item.id}})">
+      <span class="time">{{item.publishTime | changeTime}}</span><span class="name"><a href="javascrpt:;" class="m-txt1">{{item.nickName}}</a></span><span class="range">{{item.distance | changeDistance}}</span>
+    </div>
+    <div class="edit-content" ng-click="list.setDetail({{item.id}})">
+      <a href="javascrpt:;" class="m-txt2">{{item.content}}</a>
+    </div>
+    <div class="operat" ng-show="showUpAndDown">
+      <a href="javascrpt:;" ng-class="(item.attitude == 2)?'top':'step'" class="a-active" ng-click="list.down({{item.id}});"><i class="icons icons_step"></i>踩</a>
+      <span class="result">{{item.score}}</span>
+      <a href="javascrpt:;" ng-class="(item.attitude == 1)?'top':'step'" class="a-active" ng-click="list.up({{item.id}});"><i class="icons icons_top"></i>顶</a>
+      <span class="comment"><a href="javascrpt:;" class="m-txt1"><i class="icons icons_comment"></i>{{item.cmtCount}}</a></span>
+    </div>
+  </article>
+  <div class='loading' ng-click="list.nextPage();" ng-show="list.loadMore">点击加载更多</div>
+  <div class='loading' ng-show="loading"><i class="icons icons_3"></i>正在加载</div>  
+</div>

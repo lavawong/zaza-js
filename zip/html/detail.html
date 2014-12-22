@@ -1,0 +1,35 @@
+<!--header-->
+<div class="navbar-absolute-top">
+  <header class="mask-header">
+    <a href="#" class="return" ng-click="senceCtrl.back()">
+      <span class="a"></span><span class="b"></span>
+    </a>
+    <a href="#" class="del-report m-txt4" ng-click="!detail.isSubmit && detail.handler(detail.str);">
+      {{detail.str}}
+    </a>
+    <div class="head-name">
+      <span class="name m-txt2">详情</span>
+    </div>
+  </header>
+</div>
+<!--/header-->
+<!--footer-->
+<div class="navbar-absolute-bottom dis-share">
+  <a href="#" ng-click="senceCtrl.toggle('addCmt')" class="lk_a a-active btn_dis"><i class="icons icons_disa"></i>评论</a><a href="#" ng-click="senceCtrl.share()" class="lk_a a-active btn_share"><i class="icons icons_share"></i>分享</a>
+</div>
+<!--/footer-->
+<div class="mask-body">
+  <div class="scrollable">
+    <div class="mask-content">
+    	<!--新加主体-->
+    	<div class="mask-map">
+      	<div id="map-container" style="width: 100%; height: 300px;" ng-show="!detail.starImg"></div>
+        <img src="../style/images/map.jpg" width="100%" ng-show="detail.starImg">
+        <!--隐藏img为不能获取位置坐标时的界面-->
+      </div>
+      <reply-list></reply-list>
+      <!--/新加主体-->
+      
+    </div>
+	</div>
+</div>

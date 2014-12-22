@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html ng-app="mask">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../style/css/pages/pages.css">
+<style type="text/css">
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+input, textarea {
+  -webkit-user-select: auto;
+}
+textarea.textarea {
+  padding: 5px;
+  -webkit-transition:all linear 0.5s;
+}
+
+textarea.ng-dirty.ng-invalid {
+  border: 1px solid #FA787E;
+  border-radius: 5px;
+}
+
+textarea.ng-dirty.ng-valid {
+  border: 1px solid #25C75A;
+  border-radius: 5px;
+}
+
+div.mask-content {
+  -webkit-overflow-scrolling:touch;
+}
+
+div.wrapper{
+  -webkit-transition:all linear 0.3s;
+  transition:all linear 0.3s;
+}
+
+div.wrapper.ng-hide{
+  opacity: 0;
+}
+
+div.wrapper.ng-show{
+  opacity: 1;
+}
+
+</style>
+<script src="../cordova.js"></script>
+<script type="text/javascript" src="../js/assets/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/assets/lib/angular.min.js"></script>
+<script type="text/javascript" src="../js/assets/lib/angular-animate.min.js"></script>
+<script type="text/javascript" src="../js/assets/lib/angular-touch.min.js"></script>
+<script type="text/javascript" src="../js/assets/lib/angular-route.min.js"></script>
+<script type="text/javascript" src="../js/assets/mask.min.js"></script>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=e8fe5b88f7eb073acccb31d0562023fa"></script>
+<title>首页</title>
+</head>
+<body> 
+<!-- wrapper -->
+<div class="wrapper"  ng-controller="SenceChangeCtrl as senceCtrl"> 
+  <!-- 主页的wrapper -->  
+  <div id="home" class="wrapper"  ng-controller="HomeCtrl as list" ng-show="senceCtrl.isPage('home')" >
+      <!--header-->
+    <div class="navbar-absolute-top">
+      <header class="mask-header">
+        <a href="#" ng-click="senceCtrl.toggle('more')" class="morehd">
+            <span class="a"></span><span class="a"></span>
+        </a>
+        <a href="#" ng-click="senceCtrl.toggle('writePage')" class="publish"><i class="icons icons_publish"></i></a>
+        <div class="head-tabs">
+            <a href="#" ng-click="senceCtrl.setTab(1)" ng-class="{cur:senceCtrl.isTabSelect(1)}" class="tabs-a recently">最近</a><a href="#" ng-class="{cur:senceCtrl.isTabSelect(2)}" ng-click="senceCtrl.setTab(2)" class="tabs-a latest">最热</a>
+          <!--cur为激活状态-->
+        </div>
+      </header>
+    </div>
+  <!--/header-->
+    <!--footer-->
+    <div class="navbar-absolute-bottom">
+      <span class="m-txt1">
+    我的积分{{senceCtrl.userData.user_info.score}}
+      </span>
+    </div>
+    <!--/footer-->
+    <div class="mask-body">
+      
+      <div class="scrollable">
+        <div class="mask-content">
+          <div class="loading" ng-show="list.networkError" ng-click="list.reRun()"><span>点此刷新</span></div>
+          <list-set ng-show="senceCtrl.isTabSelect(1)" page="home">
+          </list-set>
+          <hot-recomment ng-show="senceCtrl.isTabSelect(2)"></hot-recomment>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div id="hotListPage" class="wrapper" ng-show="senceCtrl.isPage('hotlist')" ng-controller="HotListCtrl as list" ng-include="'hotListTpl.html'"></div>
+  
+  <div id="writePage" class="wrapper" ng-show="senceCtrl.isPage('writePage');" ng-include="'write.html'"></div>
+
+  <div id="addCmtPage" class="wrapper" ng-show="senceCtrl.isPage('addCmt')" ng-include="'addCmt.html'"></div>
+
+  <div id="morePage" class="wrapper" ng-show="senceCtrl.isPage('more')" ng-controller="MoreCtrl as more" ng-include="'more.html'"></div>
+
+  <div id="listPage" class="wrapper" ng-show="senceCtrl.isPage('myList')" ng-controller="MyListCtrl as list" ng-include="'myList.html'"></div>
+
+  <div id="replyPage" class="wrapper" ng-show="senceCtrl.isPage('myReply')" ng-controller="MyReplyCtrl as reply" ng-include="'myReply.html'"></div>
+
+  <div id="detailPage" class="wrapper" ng-show="senceCtrl.isPage('detail')" ng-controller="MaskDetailCtrl as detail" ng-include="'detail.html'"></div>
+
+  <div id="updateNickPage" class="wrapper" ng-show="senceCtrl.isPage('updateNick')" ng-include="'updateNick.html'"></div>
+</div>
+<social-share class="ng-hide"></social-share>
+
+<!-- wrapper -->
+<div id="log" style="display:none;position:absolute;bottom:0;max-height:200px;background:rgba(0,0,0,0.7);width:100%;overflow:auto;-webkit-overflow-scrolling:touch;z-index:99999;color:#fff;word-wrap: break-word;word-break: break-all;"></div>
+</body>
+</html>

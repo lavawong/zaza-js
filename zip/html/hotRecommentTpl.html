@@ -1,0 +1,16 @@
+<div class="mask-hot">
+  <pull-refresh  pull-call="recmtCtrl"></pull-refresh>
+  <ul class="hot-list">
+    <li class="hot-tit m-txt1">热门地点</li>
+    <li class="hot-txt ng-scope" ng-repeat="place in recmtCtrl.placeList">
+      <a href="#" class="lk_a m-txt2 ng-binding" ng-click="senceCtrl.toggle('hotlist'); recmtCtrl.setRecomment('place', {{place.pid}}, '{{place.po_places}}')"><i class="icons icons_angle"></i>{{place.po_places}}</a>
+    </li>
+   
+  </ul>
+  <ul class="hot-list">
+    <li class="hot-tit m-txt1">热门话题</li>
+    <li class="hot-txt ng-scope" ng-repeat="topic in recmtCtrl.topicList">
+      <a href="#" class="lk_a m-txt2 ng-binding" ng-click="senceCtrl.toggle('hotlist');recmtCtrl.setRecomment('topic', {{topic.tid}}, '{{topic.tname}}')"><i class="icons icons_angle"></i>{{topic.tname}}</a>
+    </li>
+  </ul>
+</div>

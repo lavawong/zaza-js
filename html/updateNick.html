@@ -1,0 +1,35 @@
+<form name="nickForm" ng-controller="UpdateNickCtrl as nickCtrl" class="wrapper">
+<!--header-->
+    <div class="navbar-absolute-top">
+      <header class="mask-header">
+        <a ng-href="#/more" class="return">
+          <span class="a"></span><span class="b"></span>
+        </a>
+        <a href="javascript:;" class="send" ng-click="nickForm.$valid && !nickCtrl.isSubmit && nickCtrl.updateNick()">
+          <span class="a"></span><span class="b"></span>
+        </a>
+        <div class="head-name">
+          <span class="name m-txt2">修改昵称</span>
+        </div>
+      </header>
+    </div>
+    <!--/header-->
+    <!--footer-->
+    <div class="navbar-absolute-bottom">
+      <span class="m-txt1">
+            我的积分{{score}}
+        </span>
+    </div>
+    <!--/footer-->
+    <div class="mask-body">
+      <div class="scrollable">
+        <div class="mask-content">
+            <div class="mask-textarea">
+            <input type="text" class="ipt" placeholder="请输入昵称..." value="" name="nick" ng-model="nickCtrl.nick" auto-focus="senceCtrl.sence.currentPage" auto-focus-value="updateNick" max-character-length="15">
+            <span class="tips" ng-hide="nickForm.nick.$error.maxCharacterLength">可输入<font color="#c1c1c1">{{ nickCtrl.nick | limitCharacters:15 }}</font>字</span>
+            <span class="tips ng-hide" ng-show="nickForm.nick.$error.maxCharacterLength">已超出<font color="#FF0000">{{ nickCtrl.nick | outOfLimit:15}}</font>字</span>
+          </div>
+        </div>
+        </div>
+    </div>
+</form>

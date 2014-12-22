@@ -1,0 +1,21 @@
+<div class="mask-article mask-details">
+      	
+  <span class="mask-nocomment" ng-show="detail.hasNoData && !detail.lists.length">暂无评论内容</span>
+  <!--暂无评论标签-->
+  
+  <article class="article" ng-repeat="item in detail.lists">
+    <div class="m-txt1 range-time">
+      <span class="time">{{item.publishTime | changeTime}}</span><span class="name"><a href="#" class="m-txt1">{{item.nickName}}</a></span>
+    </div>
+    <div class="edit-content">
+      <a href="#" class="m-txt2">{{item.content}}</a>
+    </div>
+    <div class="operat">
+      <a href="#" ng-class="(item.attitude == 2)?'top':'step'" class="a-active" ng-click="detail.down({{item.id}});"><i class="icons icons_step"></i>踩</a>
+      <span class="result">{{item.score}}</span>
+      <a href="#" ng-class="(item.attitude == 1)?'top':'step'" class="a-active" ng-click="detail.up({{item.id}});"><i class="icons icons_top"></i>顶</a>
+    </div>
+  </article>
+  <div class='loading' ng-click="detail.nextPage();" ng-show="detail.loadMore">点击加载更多</div>
+  <div class='loading' ng-show="detail.loading"><i class="icons icons_3"></i>正在加载</div>
+</div>

@@ -1,0 +1,64 @@
+/* 读取js代码 */
+var qs   = require('querystring');
+var url    = require('url');
+var fs   = require('fs');
+var path = require('path');
+
+var filter_regex = /\.js$/;
+
+function getContent(filePath){
+    var fsStat = fs.statSync(filePath);
+    if (fsStat.isDirectory()) {
+        var fileContents = [];
+
+        var files = fs.readdirSync(filePath);
+
+        files.filter(function(val, index, arr){
+            if (filter_regex.test(filePath+'/'+val)) {
+                return true;
+            } else {
+                return false;
+            }
+        }).map(function(val, index, arr){
+            var stat = fs.statSync(filePath+'/'+val);
+            if (!stat.isDirectory()) {
+                var content = fs.readFileSync(filePath+'/'+val, {encoding:'utf-8'});
+                fileContents.push(content);
+            } else {
+                return '';
+            }
+
+        });
+        return fileContents.join('\r\n');
+    } else if (fsStat.isFile()) {
+        return fs.readFileSync(filePath, {encoding:'utf-8'});
+    }
+    
+    return '\r\n';
+};
+ 
+
+/*定义处理函数*/
+function proccess(req, res){
+    var query    = qs.parse(url.parse(req.url).query);
+    var pageid   = query.pageid;
+    var basepath = path.resolve(__dirname,'../js/src/');
+    var srcUrl   = basepath + '/conf/' + pageid + '.js';
+    
+    var content = [getContent(srcUrl)];
+
+    content.push(getContent(basepath + '/factory'));
+
+    content.push(getContent(basepath + '/filter'));
+    content.push(getContent(basepath + '/service'));
+    content.push(getContent(basepath + '/directive'));
+    content.push(getContent(basepath + '/ctrl'));
+
+    res.writeHeader(200,{
+        'Content-Type':'application/javascript'
+		, 'Cache-Control':'nocache, max-age=0'
+    });
+    res.end(content.join('\r\n'));  
+}
+
+route(proccess);

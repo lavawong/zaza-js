@@ -1,0 +1,36 @@
+
+  <!-- 主页的wrapper -->  
+  <div id="home" class="wrapper"  ng-controller="HomeCtrl as list">
+      <!--header-->
+    <div class="navbar-absolute-top">
+      <header class="mask-header">
+        <a ng-href="#/more" class="morehd">
+            <span class="a"></span><span class="a"></span>
+        </a>
+        <a ng-href="#/write"class="publish"><i class="icons icons_publish"></i></a>
+        <div class="head-tabs">
+            <a ng-href="#/home" ng-click="homeTab=1" ng-class="{cur:homeTab==1}" class="tabs-a recently">最近</a><a ng-href="#/home/2" ng-class="{cur:homeTab==2}" ng-click="homeTab=2" class="tabs-a latest">最热</a>
+          <!--cur为激活状态-->
+        </div>
+      </header>
+    </div>
+  <!--/header-->
+    <!--footer-->
+    <div class="navbar-absolute-bottom">
+      <span class="m-txt1">
+    我的积分{{score}}
+      </span>
+    </div>
+    <!--/footer-->
+    <div class="mask-body">
+      
+      <div class="scrollable">
+        <div class="mask-content" ng-switch on="homeTab">
+          <div class="loading" ng-show="list.networkError" ng-click="list.reRun()"><span>点此刷新</span></div>
+          <list-set ng-switch-default page="home"></list-set>
+          <hot-recomment ng-switch-when="2"></hot-recomment>
+        </div>
+        </div>
+    </div>
+  </div>
+  

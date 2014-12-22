@@ -1,0 +1,131 @@
+{
+    "code": "A00008",
+    "message": "该用户已存在，登录成功",
+    "data": {
+        "user_info" : {
+            "uid": "1",
+            "uniqueid": "yifei1",
+            "nickname": "yifei1",
+            "score": "1002",
+            "createtime": "2014-06-16 22:54:09",
+            "updatetime": "2014-06-16 22:54:09",
+            "ip": "219.142.118.233",
+            "pushalert": "0"
+ },
+        "secret_info" : {
+            "total": "5",
+            "page": "1",
+            "list": [
+            {
+                "id": "21",
+                "nickName": "jianqiang",
+                "content": "secret port test1",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "22",
+                "nickName": "少林宝强",
+                "content": "secret port test2",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "23",
+                "nickName": "无敌队长",
+                "content": "secret port test3",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "24",
+                "nickName": "牛大爷",
+                "content": "secret port test4",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "25",
+                "nickName": "天下无双",
+                "content": "secret port test5",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "26",
+                "nickName": "就是任性",
+                "content": "secret port test6",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "27",
+                "nickName": "躲猫猫",
+                "content": "secret port test7",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "28",
+                "nickName": "大耳朵",
+                "content": "secret port test8",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            },
+            {
+                "id": "29",
+                "nickName": "二大爷",
+                "content": "secret port test9",
+                "publishTime": -62170013157,
+                "longitude": "11.1000000000",
+                "latitude": "21.1000000000",
+                "cmtCount": "0",
+                "score": 0,
+                "distance": 785541,
+                "attitude": 0
+            }
+            ]  
+        },
+        "session_id" : "a239cc35c5d4be4ff41f1c8b420eefc3"
+    } 
+}
